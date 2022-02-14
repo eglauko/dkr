@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgresql:
+    image: "postgres:latest"
+    ports:
+      - "5432:5432"
+    env_file:
+      - pg.env
+    volumes:
+      - "./data:/var/lib/postgresql/data/"
+    networks:
+      - postgresql
+
+networks:
+  postgresql:
+    driver: bridge
