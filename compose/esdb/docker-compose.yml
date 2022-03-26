@@ -15,5 +15,5 @@ services:
       - "1113:1113"
       - "2113:2113"
     volumes:
-      - "./data:/var/lib/eventstore"
-      - "./logs:/var/log/eventstore"
+      - "../../volumes/eventstore/data:/var/lib/eventstore"
+      - "../../volumes/eventstore/logs:/var/log/eventstore"
