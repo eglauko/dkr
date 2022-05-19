@@ -92,6 +92,23 @@ sudo usermod -aG docker $USER
 
 Feche o terminal e abra um novo, então poderá executar `docker ps`.
 
+Na versão 22 do Ubuntu ocorrerá um erro como este:
+
+```
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+
+O motivo deste erro é porque o Ubuntu 22.04 LTS utiliza o `iptables-nft` por padrão.
+Você precisa mudar para o `iptables-legacy` para que o Docker funcione novamente.
+
+Execute o comando para configurar iptables:
+```
+sudo update-alternatives --config iptables
+```
+
+Será listada algumas opções, então, digite o número da opção `iptables-legacy`, o qual normalmente será `1`.
+
+Depois disso, inicie o serviço do docker e execute algum comando para testar.
 
 ### Instalando o Docker-Compose
 
