@@ -1,12 +1,14 @@
 services:
   cockroachdb:
     image: cockroachdb/cockroach:latest
+    container_name: cockroach
+    hostname: cockroach
     ports:
       - "26257:26257"
       - "8080:8080"
     command: start-single-node --insecure
     volumes:
-      - "./data:/cockroach/cockroach-data"
+      - "../../volumes/cockroach/data:/cockroach/cockroach-data"
     networks:
       - cockroachnet
 
