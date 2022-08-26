@@ -205,7 +205,7 @@ Depois de ativado o *Kong* é preciso utilizar outra função do minikube para p
 Para isso utilize o comando:
 
 ```sh
-minimuke tunnel
+minikube tunnel
 ```
 
 Isso requer a senha *sudo*, então aparecerá as mensagens abaixo:
